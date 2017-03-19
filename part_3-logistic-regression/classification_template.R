@@ -17,11 +17,10 @@ test_set = subset(dataset, split==FALSE)
 training_set[, 1:2] = scale(training_set[, 1:2])
 test_set[, 1:2] = scale(test_set[, 1:2])
 
-# Fitting Logisitic Regression to training set
+# Fitting Classifier to training set
 #---------------------------------------------
-classifier = glm(formula = Purchased ~ .,
-                 family = binomial,
-                 data = training_set)
+# Create your own classifier here
+# classifier =
 
 # Predicting the Test set results
 #--------------------------------
@@ -42,7 +41,7 @@ colnames(grid_set) = c('Age', 'EstimatedSalary')
 prob_set = predict(classifier, type='response', newdata=grid_set)
 y_grid = ifelse(prob_set > 0.5, 1, 0)
 plot(set[, -3],
-     main='Logistic Regression (Training Set)',
+     main='Classifier (Training Set)',
      xlab='Age', ylab='Estimated Salary',
      xlim=range(X1), ylim=range(X2))
 contour(X1, X2, matrix(as.numeric(y_grid), length(X1), length(X2)), add=TRUE)
@@ -59,7 +58,7 @@ colnames(grid_set) = c('Age', 'EstimatedSalary')
 prob_set = predict(classifier, type='response', newdata=grid_set)
 y_grid = ifelse(prob_set > 0.5, 1, 0)
 plot(set[, -3],
-     main='Logistic Regression (Test Set)',
+     main='Classifier (Test Set)',
      xlab='Age', ylab='Estimated Salary',
      xlim=range(X1), ylim=range(X2))
 contour(X1, X2, matrix(as.numeric(y_grid), length(X1), length(X2)), add=TRUE)
