@@ -1,6 +1,6 @@
 # Importing the dataset
 # ---------------------
-dataset = read.csv('../part_3-logistic-regression/Social_Network_Ads.csv')
+dataset = read.csv('../../data_files/Social_Network_Ads.csv')
 dataset = dataset[3:5]
 
 # Encoding the target feature as factor

@@ -1,6 +1,6 @@
 # Importing the dataset
 # ---------------------
-dataset = read.csv('Position_Salaries.csv')
+dataset = read.csv('../../data_files/Position_Salaries.csv')
 dataset = dataset[2:3]
 
 # Fitting Linear Regression to the dataset
@@ -15,7 +15,7 @@ poly_reg = lm(formula = Salary ~ ., data = dataset)
 # Visualizing the Linear Regression results
 # install.packages('ggplot2')
 library(ggplot2)
-ggplot() + 
+ggplot() +
     geom_point(aes(x=dataset$Level, y=dataset$Salary), color='red') +
     geom_line(aes(x=dataset$Level, y=predict(lin_reg, newdata=dataset)), color='blue') +
     ggtitle('Truth and Bluff (Linear Regression)') +
@@ -23,7 +23,7 @@ ggplot() +
     ylab('Salary')
 
 # Visualizing the Polynomial Regression results
-ggplot() + 
+ggplot() +
     geom_point(aes(x=dataset$Level, y=dataset$Salary), color='red') +
     geom_line(aes(x=dataset$Level, y=predict(poly_reg, newdata=dataset)), color='blue') +
     ggtitle('Truth and Bluff (Polynomial Regression)') +

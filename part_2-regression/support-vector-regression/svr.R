@@ -1,6 +1,6 @@
 # Importing the dataset
 # ---------------------
-dataset = read.csv('Position_Salaries.csv')
+dataset = read.csv('../../data_files/Position_Salaries.csv')
 dataset = dataset[2:3]
 
 # Fitting Regression to the dataset
@@ -17,7 +17,7 @@ library(ggplot2)
 x_grid = seq(min(dataset$Level), max(dataset$Level), 0.1)
 
 # Visualizing the SVR results
-ggplot() + 
+ggplot() +
     geom_point(aes(x=dataset$Level, y=dataset$Salary), color='red') +
     geom_line(aes(x=x_grid, y=predict(regressor, newdata=data.frame(Level=x_grid))), color='blue') +
     ggtitle('Truth and Bluff (SVR)') +

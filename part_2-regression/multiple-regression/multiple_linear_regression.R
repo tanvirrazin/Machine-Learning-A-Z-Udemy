@@ -1,6 +1,6 @@
 # Importing the dataset
 # ---------------------
-dataset = read.csv('50_Startups.csv')
+dataset = read.csv('../../data_files/50_Startups.csv')
 # dataset = dataset[, 2:3]
 
 # Encoding categorical data

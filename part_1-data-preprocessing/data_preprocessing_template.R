@@ -1,6 +1,6 @@
 # Importing the dataset
 # ---------------------
-dataset = read.csv('Data.csv')
+dataset = read.csv('../data_files/Data.csv')
 # dataset = dataset[, 2:3]
 
 # Taking care of the missing data

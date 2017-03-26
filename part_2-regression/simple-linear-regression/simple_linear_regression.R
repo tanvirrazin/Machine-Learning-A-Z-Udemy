@@ -1,6 +1,6 @@
 # Importing the dataset
 # ---------------------
-dataset = read.csv('Salary_Data.csv')
+dataset = read.csv('../../data_files/Salary_Data.csv')
 # dataset = dataset[, 2:3]
 
 # Splitting the dataset into the Training set and Test set
