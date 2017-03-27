@@ -17,7 +17,7 @@ kmeans <- kmeans(X, 5, iter.max=300, nstart=10)
 # Visualizing the clusters
 library(cluster)
 clusplot(X,
-        kmeans$cluster,
+        kmeans,
         lines=0,
         shade=TRUE,
         color=TRUE,
