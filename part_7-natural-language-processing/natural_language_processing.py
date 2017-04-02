@@ -23,3 +23,9 @@ for i in range(0, len(dataset['Review'])):
     review = [ps.stem(word) for word in review if not word in stopword_set]
     review = ' '.join(review)
     corpus.append(review)
+
+# Creating the Bag of Words model
+from sklearn.feature_extraction.text import CountVectorizer
+cv = CountVectorizer(max_features=1500)
+X = cv.fit_transform(corpus).toarray()
+y = dataset.iloc[:, 1].values
